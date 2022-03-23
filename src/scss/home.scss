@@ -7,12 +7,18 @@
    &__body {
       display: grid;
       grid-template-columns: 1fr percent(635, 1600);
+      align-items: start;
    }
 
    &__slider {
+      margin: 0 rem(-30);
+      padding: 0 rem(30);
    }
 
    &__swiper {
+      &:not(:last-child) {
+         margin-bottom: rem(30);
+      }
    }
 
    &__slide {
@@ -23,11 +29,61 @@
 
    &__advantages {
    }
-}
-.mainslider {
-   &__container {
+   &__controll {
    }
 }
+
+.controll-main-block {
+   display: inline-grid;
+   grid-auto-flow: column;
+   align-items: center;
+   gap: rem(20);
+
+   &__dotts {
+      display: inline-grid;
+      grid-auto-flow: column;
+      gap: rem(15);
+      .swiper-pagination-bullet {
+         cursor: pointer;
+         &::after {
+            height: rem(2);
+            width: rem(15);
+            content: '';
+            background-color: #fff;
+            transition: all 0.3s ease 0s;
+         }
+      }
+      .swiper-pagination-bullet-active {
+         background-color: $mainOrangeColor;
+         position: relative;
+         width: rem(30);
+         &::before {
+            content: '';
+            position: absolute;
+            background-color: $mainOrangeColor;
+            width: rem(10);
+            height: rem(10);
+            top: 50%;
+            left: 0;
+            border-radius: 50%;
+            transform: translate(0, -50%);
+         }
+      }
+   }
+
+   &__fraction {
+      display: flex;
+      color: #fff;
+   }
+}
+.fraction-controll {
+   &__current {
+   }
+
+   &__all {
+   }
+}
+
 .slide-main-block {
    &__content {
       color: #fff;
