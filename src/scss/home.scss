@@ -38,25 +38,25 @@
    grid-auto-flow: column;
    align-items: center;
    gap: rem(20);
-
    &__dotts {
       display: inline-grid;
       grid-auto-flow: column;
       gap: rem(15);
+      transform: translate(0, 10%);
       .swiper-pagination-bullet {
          cursor: pointer;
-         &::after {
-            height: rem(2);
-            width: rem(15);
-            content: '';
-            background-color: #fff;
-            transition: all 0.3s ease 0s;
-         }
-      }
-      .swiper-pagination-bullet-active {
-         background-color: $mainOrangeColor;
+         height: rem(40);
+         width: rem(18);
          position: relative;
-         width: rem(30);
+         &::after {
+            content: '';
+            height: rem(2);
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translate(0, -50%);
+            background-color: #fff;
+         }
          &::before {
             content: '';
             position: absolute;
@@ -67,20 +67,38 @@
             left: 0;
             border-radius: 50%;
             transform: translate(0, -50%);
+            opacity: 0;
+         }
+      }
+      .swiper-pagination-bullet-active {
+         width: rem(30);
+         &::after {
+            background-color: $mainOrangeColor;
+         }
+         &::before {
+            opacity: 1;
+            left: rem(20);
+            transition: left 3s linear 0s;
          }
       }
    }
 
    &__fraction {
-      display: flex;
-      color: #fff;
    }
 }
 .fraction-controll {
+   display: flex;
+   color: #fff;
+   font-weight: 600;
+   align-items: flex-end;
+   letter-spacing: 0.2em;
    &__current {
+      color: $mainOrangeColor;
+      font-size: rem(24);
    }
 
    &__all {
+      font-size: rem(18);
    }
 }
 
