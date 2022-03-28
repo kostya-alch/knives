@@ -2,7 +2,7 @@
 
 .main-block {
    background: url('@img/main-block/bg.jpg') center / cover no-repeat;
-   @include adaptiveValue('padding-top', 40, 20);
+   @include adaptiveValue('padding-top', 40, 40);
    @include adaptiveValue('padding-bottom', 60, 20);
    &__body {
       display: grid;
@@ -287,5 +287,120 @@
       color: #fff;
    }
 }
+
+//====================================================================================================
+
+.catalog-cards {
+   @include adaptiveValue('padding-top', 100, 40);
+   @include adaptiveValue('padding-bottom', 70, 40);
+   &__container {
+      display: grid;
+      gap: rem(30);
+      @media (min-width: $mobileSmall) {
+         grid-template-columns: repeat(auto-fit, minmax(rem(400), 1fr));
+      }
+   }
+
+   &__item {
+   }
+}
+.item-catalog-cards {
+   overflow: hidden;
+   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+   position: relative;
+   min-height: rem(290);
+   transition: box-shadow 0.3s ease 0s;
+   @media (any-hover: hover) {
+      &:hover {
+         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+      }
+   }
+   &__body {
+      position: relative;
+      @include adaptiveValue('padding', 30, 20);
+      z-index: 2;
+   }
+
+   &__title {
+      &:not(:last-child) {
+         margin-bottom: em(30, 24);
+      }
+   }
+
+   &__link-title {
+      font-weight: 600;
+      font-size: rem(24);
+      line-height: math.div(34, 24);
+      display: inline-block;
+      &::after {
+         content: '';
+         width: rem(70);
+         height: rem(2);
+         margin: rem(15) 0 0 0;
+         display: block;
+         background-color: $mainOrangeColor;
+         transition: width 0.8s ease 0s;
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            &::after {
+               width: 100%;
+            }
+         }
+      }
+   }
+   &__link {
+      font-size: rem(18);
+      line-height: math.div(24, 18);
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
+
+   &__list {
+   }
+
+   &__item {
+      position: relative;
+      padding: 0 0 0 rem(20);
+      &::before {
+         content: '';
+         width: rem(6);
+         height: rem(6);
+         border-radius: 50%;
+         position: absolute;
+         top: em(8, 18);
+         left: 0;
+         background-color: $mainOrangeColor;
+      }
+      &:not(:last-child) {
+         margin-bottom: rem(10);
+      }
+   }
+
+   &__image {
+      text-align: right;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      transform: translate(0, 8%);
+      img {
+         max-width: 100%;
+      }
+      @media (min-width: $mobileSmall) {
+         position: absolute;
+         top: 0;
+         right: 0;
+         height: 100%;
+      }
+   }
+}
+
+//====================================================================================================
+
+
 
 //====================================================================================================
