@@ -1,1 +1,128 @@
-// Заголовки, общие БЄМ блоки и проче...
+.products-slider {
+   &__container {
+   }
+
+   &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &:not(:last-child) {
+         @include adaptiveValue('margin-bottom', 50, 30);
+      }
+   }
+
+   &__title {
+      font-size: rem(30);
+      line-height: math.div(46, 30);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+   }
+
+   &__more {
+      display: inline-flex;
+      align-items: center;
+      gap: em(15, 18);
+      color: rgba(20, 20, 20, 0.58);
+      font-weight: 600;
+      font-size: rem(18);
+      transition: color 0.3s ease 0s;
+      &::after {
+         @extend %ic;
+         font-size: em(7, 18);
+         content: '\e903';
+         transform: rotate(-90deg);
+         color: $mainOrangeColor;
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            color: rgba(20, 20, 20, 1);
+         }
+      }
+   }
+
+   &__slider {
+      padding: rem(15);
+      margin: 0 rem(-15);
+   }
+
+   &__swiper {
+   }
+
+   &__slide {
+   }
+}
+.product-card {
+   display: grid;
+   grid-template-rows: auto 1fr;
+   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+   transition: box-shadow 0.3s ease 0s;
+   @media (any-hover: hover) {
+      &:hover {
+         box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.2);
+      }
+   }
+   &__image-ibg {
+      &_contain {
+      }
+   }
+
+   &__body {
+      padding: rem(20);
+   }
+
+   &__title {
+   }
+
+   &__link-title {
+   }
+
+   &__info {
+   }
+
+   &__rating {
+   }
+
+   &__footer {
+   }
+
+   &__price {
+   }
+
+   &__compare {
+   }
+
+   &__favourite {
+   }
+
+   &__cart {
+   }
+}
+.info-product-card {
+   &__size {
+   }
+
+   &__materials {
+   }
+}
+.rating {
+   &_set {
+   }
+
+   &__body {
+   }
+
+   &__active {
+   }
+
+   &__items {
+   }
+
+   &__item {
+   }
+
+   &__value {
+   }
+
+   &__info {
+   }
+}
