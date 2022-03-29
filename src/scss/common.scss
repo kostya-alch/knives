@@ -41,18 +41,68 @@
    }
 
    &__slider {
-      padding: rem(15);
-      margin: 0 rem(-15);
+      padding: rem(15) rem(20);
+      margin: 0 rem(-20);
    }
 
    &__swiper {
+      &:not(:last-child) {
+         margin-bottom: rem(50);
+      }
    }
 
    &__slide {
    }
+
+   &__dotts {
+      display: grid;
+      grid-auto-flow: column;
+      gap: rem(15);
+      justify-content: center;
+      transform: translate(0, 10%);
+      .swiper-pagination-bullet {
+         cursor: pointer;
+         height: rem(40);
+         width: rem(18);
+         position: relative;
+         &::after {
+            content: '';
+            height: rem(2);
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translate(0, -50%);
+            background-color: #898989;
+         }
+         &::before {
+            content: '';
+            position: absolute;
+            background-color: $mainOrangeColor;
+            width: rem(10);
+            height: rem(10);
+            top: 50%;
+            left: 0;
+            border-radius: 50%;
+            transform: translate(0, -50%);
+            opacity: 0;
+         }
+      }
+      .swiper-pagination-bullet-active {
+         width: rem(30);
+         &::after {
+            background-color: $mainOrangeColor;
+         }
+         &::before {
+            opacity: 1;
+            left: rem(20);
+            transition: left 3s linear 0s;
+         }
+      }
+   }
 }
 .product-card {
    display: grid;
+   height: 100%;
    grid-template-rows: auto 1fr;
    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
    transition: box-shadow 0.3s ease 0s;
@@ -61,31 +111,81 @@
          box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.2);
       }
    }
-   &__image-ibg {
-      &_contain {
-      }
+
+   &__image {
+      @include adaptiveValue('padding-top', 25, 15);
+      @include adaptiveValue('padding-bottom', 25, 15);
+      @include adaptiveValue('padding-right', 50, 15);
+      @include adaptiveValue('padding-left', 50, 15);
+   }
+
+   &__item-image-ibg {
+      display: block;
+      padding-bottom: percent(240, 270);
    }
 
    &__body {
+      display: flex;
+      flex-direction: column;
       padding: rem(20);
    }
 
    &__title {
+      flex: 1 1 auto;
+      font-weight: 600;
+      font-size: rem(20);
+      line-height: math.div(34, 20);
+      transition: all 0.3s ease 0s;
+      &:not(:last-child) {
+         margin-bottom: em(10, 20);
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
    }
 
    &__link-title {
    }
 
    &__info {
+      &:not(:last-child) {
+         margin-bottom: em(15, 16);
+      }
    }
 
    &__rating {
+      justify-content: space-between;
+      &:not(:last-child) {
+         margin-bottom: rem(26);
+      }
    }
 
    &__footer {
+      border-top: 1px solid rgba(20, 20, 20, 0.5);
+      padding: rem(20) 0;
+      display: flex;
+      align-items: center;
+      gap: rem(15);
    }
 
    &__price {
+      flex: 1 1 auto;
+      font-weight: 600;
+      font-size: rem(20);
+      line-height: math.div(34, 20);
+   }
+
+   &__compare,
+   &__favourite {
+      font-size: rem(24);
+      transition: color 0.3s ease 0s;
+      @media (any-hover: hover) {
+         &:hover {
+            color: $mainOrangeColor;
+         }
+      }
    }
 
    &__compare {
@@ -95,34 +195,32 @@
    }
 
    &__cart {
+      width: 100%;
+      span {
+         display: flex;
+         flex-direction: row-reverse;
+         align-items: center;
+         justify-content: center;
+         &::before {
+            margin: 0 0 0 rem(16);
+         }
+      }
    }
 }
 .info-product-card {
+   color: #ababab;
+   display: flex;
+   justify-content: space-between;
+   gap: rem(10);
+   font-size: rem(16);
    &__size {
    }
 
    &__materials {
    }
 }
-.rating {
-   &_set {
-   }
 
-   &__body {
-   }
-
-   &__active {
-   }
-
-   &__items {
-   }
-
-   &__item {
-   }
-
-   &__value {
-   }
-
-   &__info {
-   }
+.hits-products {
+   @include adaptiveValue('padding-top', 50, 40);
+   @include adaptiveValue('padding-bottom', 120, 40);
 }
