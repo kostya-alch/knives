@@ -49,7 +49,7 @@
       @include adaptiveValue('row-gap', 40, 20);
       &:not(:last-child) {
          padding: 0 0 rem(30) 0;
-         border: 1px solid rgba(255, 255, 255, 0.5);
+         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
       }
    }
 
@@ -91,6 +91,20 @@
       }
    }
 
+   &__text {
+      max-width: rem(318);
+      line-height: math.div(27, 18);
+      color: #fff;
+      a {
+         color: $mainOrangeColor;
+         @media (any-hover: hover) {
+            &:hover {
+               text-decoration: underline;
+            }
+         }
+      }
+   }
+
    &__body {
       @include adaptiveValue('padding-top', 30, 20);
       @include adaptiveValue('padding-bottom', 30, 20);
@@ -98,19 +112,90 @@
 }
 
 .menu-footer {
+   &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 32, 20);
+   }
    &__list {
    }
 
    &__item {
+      line-height: 1.5;
+      display: flex;
+      color: rgba(255, 255, 255, 0.8);
       &:not(:last-child) {
-         margin-bottom: em(20, 17);
+         margin-bottom: em(20, 18);
+      }
+      &::before {
+         font-size: rem(15);
+         margin: em(5, 15) em(10, 15) 0 0;
       }
    }
 
    &__link {
+      display: inline-flex;
       line-height: math.div(27, 18);
       color: rgba(255, 255, 255, 0.8);
+      &::before {
+         font-size: rem(20);
+         margin: 0 em(10, 15) 0 0;
+      }
+      &._icon-footer-letter {
+         &::before {
+            font-size: rem(13);
+         }
+      }
    }
 }
-
+.social-footer {
+   display: flex;
+   gap: rem(22);
+}
 //====================================================================================================
+
+.footer-subscribe {
+   &__label {
+      color: #fff;
+      line-height: math.div(22, 18);
+      display: block;
+      &:not(:last-child) {
+         margin-bottom: em(10, 18);
+      }
+   }
+
+   &__line {
+      display: flex;
+      position: relative;
+      .form__error {
+         position: absolute;
+         bottom: rem(-15);
+         font-size: rem(10);
+         color: red;
+      }
+   }
+
+   &__input {
+      background: rgba(255, 255, 255, 0.05);
+      height: rem(48);
+      padding: 0 rem(20);
+      color: #fff;
+      width: 100%;
+      border: 1px solid #fff;
+      border-right: none;
+      border-radius: rem(3) 0 0 rem(3);
+      overflow: hidden;
+   }
+
+   &__button {
+      flex: 0 0 rem(50);
+      border-radius: 0 rem(3) rem(3) 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $mainOrangeColor;
+      &::before {
+         transform: rotate(90deg);
+         color: #fff;
+         font-size: rem(8);
+      }
+   }
+}
