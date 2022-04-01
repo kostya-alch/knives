@@ -335,3 +335,42 @@
    }
 }
 //====================================================================================================
+
+.breadcrumbs {
+   white-space: nowrap;
+   overflow: auto;
+   height: rem(22);
+   &__list {
+      display: flex;
+   }
+
+   &__item {
+   }
+
+   &__link {
+      opacity: 0.5;
+      display: flex;
+      align-items: center;
+
+      &::after {
+         content: '\e903';
+         @extend %ic;
+         transform: rotate(-90deg);
+         font-size: rem(6);
+         margin: 0 em(10, 8);
+      }
+   }
+
+   &__current {
+      color: $mainOrangeColor;
+   }
+}
+
+.title {
+   font-weight: 700;
+   font-size: rem(24);
+   line-height: math.div(29, 24);
+   &:not(:last-child) {
+      margin-bottom: em(25, 24);
+   }
+}
