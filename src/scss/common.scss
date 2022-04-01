@@ -112,6 +112,17 @@
    &__link-title {
    }
 
+   &__sale {
+      position: absolute;
+      top: rem(20);
+      left: 0;
+      color: #fff;
+      background-color: $mainOrangeColor;
+      padding: rem(6) rem(22);
+      z-index: 10;
+      pointer-events: none;
+   }
+
    &__info {
       &:not(:last-child) {
          margin-bottom: em(15, 16);
