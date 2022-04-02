@@ -26,7 +26,40 @@
             <div class="catalog">
                <div class="catalog__container">
                   <div class="catalog__body">
-                     <div class="catalog__filter"></div>
+                     <div class="catalog__filter filter-catalog">
+                        <div class="filter-catalog__title">Фильтр товаров</div>
+                        <div data-spollers class="filter-catalog__items">
+                           <div class="filter-catalog__price price-filter">
+                              <button
+                                 type="button"
+                                 data-spoller
+                                 class="price-filter__title _icon-spoller-arrow"
+                              >
+                                 Цена
+                              </button>
+                              <div data-range class="price-filter__body">
+                                 <div class="price-filter__inputs">
+                                    <input
+                                       data-range-from="0"
+                                       type="text"
+                                       value="500"
+                                       class="price-filter__input"
+                                    />
+                                    <input
+                                       data-range-to="5000"
+                                       type="text"
+                                       value="1000"
+                                       class="price-filter__input"
+                                    />
+                                 </div>
+                                 <div
+                                    data-range-item
+                                    class="price-filter__range"
+                                 ></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
                      <div class="catalog__content">
                         <div class="catalog__control">
                            <select name="form[]" class="control">
@@ -40,7 +73,7 @@
                         </div>
                         <div class="catalog__products">
                            <acticle class="product-card">
-                               <div class="product-card__sale">-50%</div>
+                              <div class="product-card__sale">-50%</div>
                               <a href="" class="product-card__image">
                                  <span
                                     class="product-card__item-image-ibg product-card__item-image-ibg_contain"
