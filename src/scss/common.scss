@@ -391,6 +391,7 @@
    justify-content: flex-end;
    align-items: center;
    gap: rem(30);
+   @include adaptiveValue('gap', 30, 15);
    &__arrow {
       color: $mainOrangeColor;
       &::before {
