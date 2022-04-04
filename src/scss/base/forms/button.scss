@@ -25,4 +25,11 @@
       color: $mainOrangeColor;
       box-shadow: none;
    }
+   &_black {
+      background-color: #000;
+      border: 1px solid $mainOrangeColor;
+      color: #fff;
+      padding: rem(8) rem(30);
+      box-shadow: none;
+   }
 }

@@ -87,7 +87,7 @@ flsForms.formSubmit(true);
 // flsForms.formMasks();
 
 /* Модуль формы "колличество" */
-// flsForms.formQuantity();
+flsForms.formQuantity();
 
 /* Модуль формы "показать пароль" */
 // flsForms.formViewpass();
@@ -105,7 +105,7 @@ flsForms.formSelect(true);
 Документация плагина: https://refreshless.com/nouislider/
 Сниппет (HTML): range
 */
-import "./files/forms/range.js";
+import './files/forms/range.js';
 
 // Модуль работы с подсказками (tippy) ====================================================================================================================================================================================================================================================================================
 /*
