@@ -143,22 +143,10 @@ body {
 @import 'product';
 
 .page {
-   &__home {
-   }
    &_inner {
       padding-top: rem(30);
    }
    &__header {
       margin-bottom: rem(30);
-   }
-   &__main-block {
-   }
-   &__catalog-cards {
-   }
-   &__products-slider {
-   }
-   &__articles-module {
-   }
-   &__products-block {
    }
 }

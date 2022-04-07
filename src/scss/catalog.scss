@@ -1,8 +1,6 @@
 .catalog {
    @include adaptiveValue('padding-bottom', 120, 40);
-   &__container {
-   }
-
+  
    &__body {
       display: grid;
       align-items: start;
@@ -11,12 +9,6 @@
       @media (min-width: $tablet) {
          grid-template-columns: rem(375) 1fr;
       }
-   }
-
-   &__filter {
-   }
-
-   &__content {
    }
 
    &__control {
@@ -45,11 +37,6 @@
       }
    }
 
-   &__more {
-   }
-
-   &__pagging {
-   }
 }
 
 .filter-catalog {
@@ -63,12 +50,6 @@
       line-height: math.div(24, 20);
       padding: rem(20) rem(30);
       color: #fff;
-   }
-
-   &__items {
-   }
-
-   &__price {
    }
 }
 
@@ -117,8 +98,6 @@
       }
    }
 
-   &__range {
-   }
 }
 
 .item-filter-catalog {
